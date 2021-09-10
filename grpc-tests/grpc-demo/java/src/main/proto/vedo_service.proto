@@ -1,0 +1,21 @@
+
+syntax = "proto3";
+package protos;
+option java_package = "com.chrisxyq";
+option java_outer_classname = "VedoServiceProto";
+option java_multiple_files = true;
+
+service Vedo {
+  rpc GetMeshPoints (GetMeshPointsRequest) returns (GetMeshPointsResult){};
+}
+
+message GetMeshPointsRequest {
+  int32  mesh_index = 1;
+}
+
+message GetMeshPointsResult {
+  bytes  mesh_points = 1;
+}
+message Point {
+  repeated double coordinate = 1;
+}

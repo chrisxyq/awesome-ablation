@@ -1,0 +1,41 @@
+
+syntax = "proto3";
+package protos;
+
+service Vedo {
+  rpc GetMeshPoints (GetMeshPointsRequest) returns (GetMeshPointsResult){};
+}
+
+message GetMeshPointsRequest {
+  int32  mesh_index = 1;
+}
+
+message GetMeshPointsResult {
+//  bytes  mesh_points = 1;
+  repeated Point point = 1;
+}
+//message Test {
+//  repeated double myint= 1;
+//}
+//message MeshPoint {
+////  bytes  mesh_points = 1;
+//  repeated Point points = 1;
+//}
+message Point {
+  repeated string coordinate = 1;
+}
+message GetUsersRequest {
+  repeated User user = 1;
+}
+message User {
+  repeated double username = 1;
+//  double user_id = 2;
+}
+message ShuzuRequest {
+  repeated Shuzu shuzu = 1;
+}
+
+message Shuzu {
+  repeated string shu = 1;
+//  double user_id = 2;
+}
